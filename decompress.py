@@ -4,3 +4,4 @@
 
 from unrar import rarfile
 
+rar = rarfile.Rarfile('sample.rar')
