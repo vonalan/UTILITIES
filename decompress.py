@@ -1,7 +1,10 @@
 # -*- coding:utf-8 -*-
 
-# pip install unrar
+# candidates: pyunpack, patool
 
-from unrar import rarfile
+# .rar evil
+# scripts
+import os
+import sys
 
-rar = rarfile.Rarfile('sample.rar')
+os.system('"C:\Program Files (x86)\WinRAR\WinRAR.exe" x ../hmdb51_org_stips/*.rar ../hmdb51_org_stips/')
