@@ -1,6 +1,7 @@
 # opencv
 # anaconda
-conda install --channel https://conda.anaconda.org/menpo opencv3
+conda install --channel https://conda.anaconda.org/menpo opencv3 #ubuntu
+pip install opencv_python-3.2.0+contrib-cp36-none-win_amd64.whl #windows
 
 # tensorflow
 # pip
