@@ -6,7 +6,7 @@
 ./db/db_iter.h 
 ./db/db_iter.cc 
 ./db/db_test.cc 
-./db/dbformat.h                           #3
+./db/dbformat.h                           #3 
 ./db/dbformat.cc 
 ./db/dbformat_test.cc
 ./util/coding.h                           finished
