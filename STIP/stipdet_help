@@ -1,0 +1,54 @@
+kingdom@kingdom-OptiPlex-390:~/Exts/stip-2.0-linux$ ./bin/stipdet --help
+
+This program detects space-time interest points at multiple
+space-time scales and computes corresponding descriptors.
+See README for the type of point detectors/descriptors
+that are currently implemented.
+
+Usage:
+
+Input/Output options:
+   -i    :  input file with sample names; format: 
+              # sample-name       start-frame     end-frame 
+              ** sample-name must be without any extension (e.g. .avi, .txt) ** 
+              ** start/end-frame is optional ** 
+   -vpath:  path to video sequences 
+   -ext:    video extension e.g. avi, mpeg, etc. (default is avi) 
+   -fpath:  path to pre-detected feature files; file (e.g. sample-name.txt) format: 
+              # point-type  x  y  t  sigma2  tau2  detector-confidence
+   -o    :  file name for saving detected features/descriptors; feature format:
+              # point-type y_norm x_norm t_norm y  x  t  sigma2  tau2  descriptor
+
+Detection options:
+   -det   :  feature detector to be used (default=harris3d)
+               harris3d : Harris3D detector
+               dense    : Regular dense sampling of features in space and time
+                  -soverlap   :  spatial overlap (default=50 percent)
+                  -toverlap   :  temporal overlap (default=50 percent)
+   -nplev : number of levels in spatial frame pyramid (default=3)
+            factor 2 subsampling is used; for each pyramid level
+            points are detected at four combinations of spatial
+            and temporal scales obtained by Gaussian smoothing 
+            with spatial variance sigma2={4.0,8.0} and 
+            temporal variance tau2={2.0,4.0}
+   -plev0 : initial level of spatial frame pyramid (default=0)
+   -kparam: K parameter in Harris function (default=0.00050)
+   -thresh: threshold for ommiting weak points (default=1.000e-09)
+	    ** to get all interest points set to zero **
+   -border: reject interest points within image boundary (default=5)
+
+Descriptor options:
+   -dscr  : type of descriptor [hoghof|hog|hof] (default=hoghof)
+   -szf   : factor used to compute descriptor spatial patch size (default=9.0)
+   -tszf  : factor used to compute descriptor temporal patch size (default=4.0)
+            patch size along spatial/temporal dimensions is defined as
+            size_dim=szf*2*sqrt(Gauss variance_dim)
+
+Other options:
+   -h     : shows this message
+   -vis   : [yes|no] visulization (default=yes)
+   -stdout: [yes|no] stdout output (default=no)
+   -mode  : feature detection & description mode (default=0)
+              0 : feature detection & description (harris3d or dense)
+              1 : feature description for external points (switch -fpath is required)
+

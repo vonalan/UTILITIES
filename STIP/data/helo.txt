@@ -1,0 +1,4 @@
+# point-type y-norm x-norm t-norm y x t sigma2 tau2 dscr-hog(72) dscr-hof(90)
+# testA_1_-1.00_h4
+
+# train_1_2.30_h4

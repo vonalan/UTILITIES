@@ -1,0 +1,3 @@
+/home/kingdom/Temp/opencvTestC++/CMakeFiles/edit_cache.dir
+/home/kingdom/Temp/opencvTestC++/CMakeFiles/rebuild_cache.dir
+/home/kingdom/Temp/opencvTestC++/CMakeFiles/DisplayImage.dir
